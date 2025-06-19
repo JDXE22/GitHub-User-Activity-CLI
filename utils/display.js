@@ -3,7 +3,7 @@ export class Display {
         this.username = username
     }
 
-    displayUserData = ({userdata}) => {
+    displayUserData = (userdata) => {
         console.log(`Recent events for user: ${this.username}`);
         for (const event of userdata) {
             const eventType = event.type;
