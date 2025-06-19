@@ -8,9 +8,11 @@ export class Display {
         for (const event of userdata) {
             const eventType = event.type;
             const repoName = event.repo.name;
-            
-            console.log(`Event: ${eventType}, Repository: ${repoName}`);
-            
+            const createdAt = new Date(event.created_at).toLocaleString();
+            console.log(`Event: ${eventType}`); 
+            console.log(`Repository: ${repoName}`);
+            console.log(`Created at: ${createdAt}`);         
+            console.log('-----------------------------------');
         }
     }
 }
