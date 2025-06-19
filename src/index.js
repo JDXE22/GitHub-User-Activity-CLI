@@ -1,3 +1,5 @@
+import { GitHubService } from "../services/githubService.js";
+
 const gitHubUsername = process.argv[2];
 
 
@@ -6,9 +8,11 @@ if (!gitHubUsername) {
   process.exit(1);
 }
 
+const gitHubService = new GitHubService();
+
 try {
-    const getUserData = await gitHubService.getUserData(gitHubUsername);
-    return displayUserData(getUserData);
+    const getUserData = await gitHubService.getUserData(gitHubUsername)
+    // return displayUserData(getUserData);
     
 } catch (error) {
     
